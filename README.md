@@ -8,10 +8,12 @@ Trained and evaluated multiple classifiers on cleaned email text, testing whethe
 
 ## Results
 
-| Model | Features | Accuracy |
-|---|---|---|
-| **MLP (best model)** | CBOW embeddings | **96%** |
-| Random Forest | CBOW embeddings | 93% |
+Test set: 3,621 emails (20% split of 18,101 cleaned emails; 38% phishing). Figures are means over 5 random seeds.
+
+| Model | Features | Accuracy | Phishing precision | Phishing recall | Phishing F1 |
+|---|---|---|---|---|---|
+| **MLP (best model)** | CBOW embeddings | **96%** | 0.95 | 0.94 | 0.95 |
+| Random Forest | CBOW embeddings | 93% | 0.94 | 0.87 | 0.90 |
 | Decision Tree, SVC, Naive Bayes | Bag-of-words (baseline) | — |
 
 The MLP trained on CBOW embeddings outperformed all bag-of-words baselines and the Random Forest comparison model, showing that learned embeddings captured more useful structure in email text than sparse count-based features for this task.
